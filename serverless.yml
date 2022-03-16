@@ -29,6 +29,24 @@ functions:
           path: /swapi/planets
           method: get
 
+  addPeople:
+    handler: src/people/addPeople.addPerson
+    events:
+      - httpApi:
+          path: /people
+          method: post
+  getPeople:
+    handler: src/people/getPeople.getPeople
+    events:
+      - httpApi:
+          path: /people
+          method: get
+  getPerson:
+    handler: src/people/getPerson.getPerson
+    events:
+      - httpApi:
+          path: /people/{id}
+          method: get
 
 resources:
   Resources:
