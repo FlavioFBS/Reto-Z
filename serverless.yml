@@ -15,6 +15,21 @@ provider:
       Resource: 
         - arn:aws:dynamodb:us-west-1:375466748597:table/PeopleTable
 
+functions:
+  swapi_getPeople:
+    handler: src/swapi/getPeople.getPeople
+    events:
+      - httpApi:
+          path: /swapi/people
+          method: get
+  swapi_getPlanets:
+    handler: src/swapi/getPlanets.getPlanets
+    events:
+      - httpApi:
+          path: /swapi/planets
+          method: get
+
+
 resources:
   Resources:
     PeopleTable:
